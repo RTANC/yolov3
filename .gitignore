@@ -19,6 +19,8 @@
 *.avi
 *.data
 *.json
+*.txt
+*.cache
 
 *.cfg
 !cfg/yolov3*.cfg
@@ -35,6 +37,10 @@ data/*
 !data/coco_*.txt
 !data/trainvalno5k.shapes
 !data/*.sh
+!malaria/images/train
+!malaria/images/val
+!malaria/labels/train
+!malaria/labels/val
 
 pycocotools/*
 results*.txt

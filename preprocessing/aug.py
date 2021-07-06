@@ -32,8 +32,8 @@ def rotate(img, bbs, specie, offset=15, phase="train",phase_count={ "train": 1,"
         if len(clip_off_bbs.bounding_boxes) > 0:
             bboxs = bboxs[1:]
             im_aug = Image.fromarray(image_aug)
-            im_aug.save(os.path.join('../data/custom/images',name+".jpg"))
-            f = open(os.path.join('../data/custom/labels',name+".txt"),'w')
+            im_aug.save(os.path.join("../malaria/images/train",name+".jpg"))
+            f = open(os.path.join("../malaria/labels/train",name+".txt"),'w')
             f.write(bboxs)
             f.close()
             print("{} {} {}".format(phase_count[phase],deg, name))
@@ -61,8 +61,8 @@ def flipHor(img, bbs, specie, phase="train",phase_count={ "train": 1,"test": 1 }
     if len(clip_off_bbs.bounding_boxes) > 0:
         bboxs = bboxs[1:]
         im_aug = Image.fromarray(image_aug)
-        im_aug.save(os.path.join('../data/custom/images',name+".jpg"))
-        f = open(os.path.join('../data/custom/labels',name+".txt"),'w')
+        im_aug.save(os.path.join("../malaria/images/train",name+".jpg"))
+        f = open(os.path.join("../malaria/labels/train",name+".txt"),'w')
         f.write(bboxs)
         f.close()
         print("{} flipLR {}".format(phase_count[phase], name))
@@ -92,8 +92,8 @@ def flipVer(img, bbs, specie, phase="train",phase_count={ "train": 1,"test": 1 }
     if len(clip_off_bbs.bounding_boxes) > 0:
         bboxs = bboxs[1:]
         im_aug = Image.fromarray(image_aug)
-        im_aug.save(os.path.join('../data/custom/images',name+".jpg"))
-        f = open(os.path.join('../data/custom/labels',name+".txt"),'w')
+        im_aug.save(os.path.join("../malaria/images/train",name+".jpg"))
+        f = open(os.path.join("../malaria/labels/train",name+".txt"),'w')
         f.write(bboxs)
         f.close()
         print("{} flipUD {}".format(phase_count[phase], name))

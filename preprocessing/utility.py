@@ -23,6 +23,10 @@ def removeBorderBox(img, bbs):
     for bb in bbs:
         xc, yc = getXYcenter(bb)
         if (xc >= 26 and xc <= 390) and (yc >= 26 and yc <= 390):
+            bb.x1 = min(max(bb.x1, 0), w)
+            bb.y1 = min(max(bb.y1, 0), h)
+            bb.x2 = min(max(bb.x2, 0), w)
+            bb.y2 = min(max(bb.y2, 0), h)
             rects.append(bb)
             bxc, byc, bw, bh, label = xyxy2xcycwh(bb, w, h)
             bboxs_txt += "\n"+ str(label) + " " + str(bxc) + " " + str(byc) + " " + str(bw) + " " + str(bh)
